@@ -6,7 +6,7 @@ namespace UserRegistrationUsingExpLambda
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Methods.FirstNameInput();
         }
     }
 }
