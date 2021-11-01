@@ -8,6 +8,7 @@ namespace UserRegistrationUsingExpLambda
         {
             Methods.FirstNameInput();
             Methods.LastNameInput();
+            Methods.EmailInput();
         }
     }
 }

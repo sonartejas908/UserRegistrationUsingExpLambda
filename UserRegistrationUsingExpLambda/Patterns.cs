@@ -13,5 +13,10 @@ namespace UserRegistrationUsingExpLambda
         {
             return Regex.IsMatch(name, Regex_Name);
         }
+        public string Regex_Email = "^[a-zA-Z0-9]+([_+-.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
+        public bool validateEmail(string email)
+        {
+            return Regex.IsMatch(email, Regex_Email);
+        }
     }
 }

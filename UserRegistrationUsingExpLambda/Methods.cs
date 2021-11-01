@@ -50,5 +50,26 @@ namespace UserRegistrationUsingExpLambda
                 }
             }
         }
+        public static void EmailInput()
+        {
+            UserInput user = new UserInput();
+            Pattern pattern = new Pattern();
+            bool status = false;
+            while (status != true)
+            {
+                Console.WriteLine("Please enter Gmail :");
+                user.email = Console.ReadLine();
+                bool Status = pattern.validateEmail(user.email);
+                if (Status == true)
+                {
+                    Console.WriteLine("Accepted");
+                    status = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter valid input");
+                }
+            }
+        }
     }
 }
