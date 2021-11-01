@@ -7,6 +7,7 @@ namespace UserRegistrationUsingExpLambda
         static void Main(string[] args)
         {
             Methods.FirstNameInput();
+            Methods.LastNameInput();
         }
     }
 }
