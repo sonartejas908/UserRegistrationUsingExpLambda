@@ -23,5 +23,10 @@ namespace UserRegistrationUsingExpLambda
         {
             return Regex.IsMatch(MobileNum, Regex_MobileNum);
         }
+        public string Regex_Password = "((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,})";
+        public bool validatePassword(string Password)
+        {
+            return Regex.IsMatch(Password, Regex_Password);
+        }
     }
 }

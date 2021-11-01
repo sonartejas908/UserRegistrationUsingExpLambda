@@ -10,6 +10,7 @@ namespace UserRegistrationUsingExpLambda
             Methods.LastNameInput();
             Methods.EmailInput();
             Methods.MobileNumInput();
+            Methods.PasswordInput();
         }
     }
 }

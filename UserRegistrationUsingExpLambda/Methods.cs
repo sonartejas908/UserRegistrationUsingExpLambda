@@ -92,5 +92,28 @@ namespace UserRegistrationUsingExpLambda
                 }
             }
         }
+        public static void PasswordInput()
+        {
+            Pattern pattern = new Pattern();
+            UserInput user = new UserInput();
+            bool status = false;
+            while (status != true)
+            {
+                Console.WriteLine("Please enter password");
+                user.password = Console.ReadLine();
+                bool Status = pattern.validatePassword(user.password);
+                if (Status == true)
+                {
+
+                    Console.WriteLine("Accepted");
+                    status = true;
+                }
+                else
+                {
+                    Console.WriteLine("Rejected");
+                }
+
+            }
+        }
     }
 }
