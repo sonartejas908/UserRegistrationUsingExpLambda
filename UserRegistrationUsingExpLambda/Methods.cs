@@ -71,5 +71,26 @@ namespace UserRegistrationUsingExpLambda
                 }
             }
         }
+        public static void MobileNumInput()
+        {
+            UserInput user = new UserInput();
+            Pattern pattern = new Pattern();
+            bool status = false;
+            while (status != true)
+            {
+                Console.WriteLine("Enter your mobile number");
+                user.mobileNum = Console.ReadLine();
+                bool Status = pattern.validateMobileNum(user.mobileNum);
+                if (Status == true)
+                {
+                    Console.WriteLine("Accepted");
+                    status = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter valid input");
+                }
+            }
+        }
     }
 }

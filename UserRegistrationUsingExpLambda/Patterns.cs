@@ -18,5 +18,10 @@ namespace UserRegistrationUsingExpLambda
         {
             return Regex.IsMatch(email, Regex_Email);
         }
+        public string Regex_MobileNum = "^([0-9]{2}[ ])?[0-9]{10}$";
+        public bool validateMobileNum(string MobileNum)
+        {
+            return Regex.IsMatch(MobileNum, Regex_MobileNum);
+        }
     }
 }
