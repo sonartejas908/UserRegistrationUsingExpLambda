@@ -12,45 +12,45 @@ namespace TestProject1
         }
 
         [Test]
-        public void CorrectFirstNameShouldReturnHappy()
+        public void WhenPassedEmptyFirstNameShouldReturnCustomException()
         {
-            object name = Methods.FirstNameInput("Tejas");
-            string expected = "Happy";
+            object name = Methods.FirstNameInput("");
+            string expected = "First Name Could not be null";
             Assert.AreEqual(name, expected);
         }
         [Test]
-        public void WrongFirstNameShouldReturnSad()
+        public void WhenPassedWrongFirstNameShouldReturnCustomException()
         {
             object name = Methods.FirstNameInput("Tejas12");
-            string expected = "Sad";
+            string expected = "Name Entered is Invalid";
             Assert.AreEqual(name, expected);
         }
         [Test]
-        public void CorrectLastNameShouldReturnHappy()
+        public void WhenCorrectFirstNamePassedShouldReturnValidation()
         {
-            object name = Methods.FirstNameInput("Sonar");
-            string expected = "Happy";
+            object name = Methods.FirstNameInput("Tejas");
+            string expected = "First Name Validated";
             Assert.AreEqual(name, expected);
         }
         [Test]
-        public void CorrectEmailNameShouldReturnHappy()
+        public void CorrectEmailNameShouldReturnValidation()
         {
             object name = Methods.EmailInput("sonartejas908@gmail.com");
-            string expected = "Happy";
+            string expected = "Email Validated";
             Assert.AreEqual(name, expected);
         }
         [Test]
-        public void CorrectMobNoShouldReturnHappy()
+        public void CorrectMobNoShouldReturnValidation()
         {
             object name = Methods.MobileNumInput("8668454516");
-            string expected = "Happy";
+            string expected = "Mobile Number Validated";
             Assert.AreEqual(name, expected);
         }
         [Test]
-        public void CorrectPasswordShouldReturnHappy()
+        public void CorrectPasswordShouldReturnValidation()
         {
             object name = Methods.PasswordInput("Tejas@123");
-            string expected = "Happy";
+            string expected = "Password Validated";
             Assert.AreEqual(name, expected);
         }
     }

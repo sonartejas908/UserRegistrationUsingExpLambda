@@ -8,69 +8,124 @@ namespace UserRegistrationUsingExpLambda
     {
         public static string FirstNameInput(string Fname)
         {
-            UserInput user = new UserInput();
-            Pattern patterns = new Pattern();
-            user.fName = Fname;
-                bool Status = patterns.validateName(user.fName);
-                if (Status == true)
+                
+            try
+            {
+                UserInput user = new UserInput();
+                Pattern patterns = new Pattern();
+                user.fName = Fname;
+                if (string.IsNullOrEmpty(Fname))
                 {
-                return "Happy";
+                    throw new RegexException(RegexException.InvalidUserDetails.EMPTY_NAME, "First Name Could not be null");
                 }
-                else
+                if(patterns.validateName(user.fName))
+                    return "First Name Validated";
+               else
                 {
-                return "Sad";
+                    throw new RegexException(RegexException.InvalidUserDetails.INVALID_FIRST_NAME, "Name Entered is Invalid");
                 }
+                
+            }
+            catch (RegexException e)
+            {
+                return e.Message;
+            }
+            catch(Exception e)
+            {
+                return e.Message;
+            }
             
         }
-       
-        public static string EmailInput(string email)
+
+        public static string EmailInput(string Email)
         {
-            UserInput user = new UserInput();
-            Pattern pattern = new Pattern();
-            user.email = email;
-                bool Status = pattern.validateEmail(user.email);
-                if (Status == true)
+
+            try
+            {
+                UserInput user = new UserInput();
+                Pattern patterns = new Pattern();
+                user.email = Email;
+                if (string.IsNullOrEmpty(Email))
                 {
-                return "Happy";  
+                    throw new RegexException(RegexException.InvalidUserDetails.EMPTY_EMAIL, "Email Could not be null");
                 }
+                if (patterns.validateEmail(user.email))
+                    return "Email Validated";
                 else
                 {
-                return "Sad";
-                }
-            
-        }
-        public static string MobileNumInput(string mobno)
-        {
-            UserInput user = new UserInput();
-            Pattern pattern = new Pattern();
-            user.mobileNum = mobno;
-                bool Status = pattern.validateMobileNum(user.mobileNum);
-                if (Status == true)
-                {
-                return "Happy";
-                }
-                else
-                {
-                return "Sad";
-                }
-            
-        }
-        public static string PasswordInput(string Password)
-        {
-            Pattern pattern = new Pattern();
-            UserInput user = new UserInput();
-            user.password = Password;
-                bool Status = pattern.validatePassword(user.password);
-                if (Status == true)
-                {
-                return "Happy";   
-                }
-                else
-                {
-                return "Sad";
+                    throw new RegexException(RegexException.InvalidUserDetails.INVALID_EMAIL, "Email Entered is Invalid");
                 }
 
-            
+            }
+            catch (RegexException e)
+            {
+                return e.Message;
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+
+        }
+        public static string MobileNumInput(string mobile)
+        {
+
+            try
+            {
+                UserInput user = new UserInput();
+                Pattern patterns = new Pattern();
+                user.mobileNum = mobile;
+                if (string.IsNullOrEmpty(mobile))
+                {
+                    throw new RegexException(RegexException.InvalidUserDetails.EMPTY_PHONE_NO, "Mobile Number Could not be null");
+                }
+                if (patterns.validateMobileNum(user.mobileNum))
+                    return "Mobile Number Validated";
+                else
+                {
+                    throw new RegexException(RegexException.InvalidUserDetails.INVALID_PHONE_NO, "Mobile Number Entered is Invalid");
+                }
+
+            }
+            catch (RegexException e)
+            {
+                return e.Message;
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+
+        }
+        public static string PasswordInput(string password)
+        {
+
+            try
+            {
+                UserInput user = new UserInput();
+                Pattern patterns = new Pattern();
+                user.password = password;
+                if (string.IsNullOrEmpty(password))
+                {
+                    throw new RegexException(RegexException.InvalidUserDetails.EMPTY_PASSWORD, "Password Could not be null");
+                }
+                if (patterns.validatePassword(user.password))
+                    return "Password Validated";
+                else
+                {
+                    throw new RegexException(RegexException.InvalidUserDetails.INVALID_PASSWORD, "Password Entered is Invalid");
+                }
+
+            }
+            catch (RegexException e)
+            {
+                return e.Message;
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+
         }
     }
 }
