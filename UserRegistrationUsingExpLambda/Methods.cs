@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace UserRegistrationUsingExpLambda
 {
@@ -127,5 +128,12 @@ namespace UserRegistrationUsingExpLambda
             }
 
         }
+        Pattern pattern = new Pattern();
+        public string LambdaExpressionFirstnameCheck() => Regex.IsMatch("Tejas", pattern.Regex_Name) ? "FirstName is Validated" : "firstName is Invalid";
+        public string LambdaExpressionEmailCheck() => Regex.IsMatch("sonartejas908@gmail.com", pattern.Regex_Email) ? "Email is Validated" : "Email is Invlid"; 
+        public string LambdaExpressionMobileCheck() => Regex.IsMatch("9004690046", pattern.Regex_MobileNum) ? "Mobile Number is Validated" : "Mobile Number is Invlid"; 
+        public string LambdaExpressionPasswordCheck() => Regex.IsMatch("Tejas@123", pattern.Regex_Password) ? "Password is Validated" : "Password is Invlid"; 
+
     }
+
 }

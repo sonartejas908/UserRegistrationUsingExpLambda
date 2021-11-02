@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Text.RegularExpressions;
 using UserRegistrationUsingExpLambda;
 
 namespace TestProject1
@@ -52,6 +53,47 @@ namespace TestProject1
             object name = Methods.PasswordInput("Tejas@123");
             string expected = "Password Validated";
             Assert.AreEqual(name, expected);
+        }
+        //Using Expression Lambda
+        [Test]
+        public void CorrectNameShouldReturnValidationLambdaExp()
+        {
+
+            Methods methods = new Methods();
+            string result = methods.LambdaExpressionFirstnameCheck();
+            string expected = "FirstName is Validated";
+            Assert.AreEqual(expected, result);
+
+        }
+        [Test]
+        public void CorrectMobileShouldReturnValidationLambdaExp()
+        {
+
+            Methods methods = new Methods();
+            string result = methods.LambdaExpressionMobileCheck();
+            string expected = "Mobile Number is Validated";
+            Assert.AreEqual(expected, result);
+
+        }
+        [Test]
+        public void CorrectEmailShouldReturnValidationLambdaExp()
+        {
+
+            Methods methods = new Methods();
+            string result = methods.LambdaExpressionEmailCheck();
+            string expected = "Email is Validated";
+            Assert.AreEqual(expected, result);
+
+        }
+        [Test]
+        public void CorrectPasswordShouldReturnValidationLambdaExp()
+        {
+
+            Methods methods = new Methods();
+            string result = methods.LambdaExpressionPasswordCheck();
+            string expected = "Password is Validated";
+            Assert.AreEqual(expected, result);
+
         }
     }
 }
