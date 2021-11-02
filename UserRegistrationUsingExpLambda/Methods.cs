@@ -4,116 +4,73 @@ using System.Text;
 
 namespace UserRegistrationUsingExpLambda
 {
-    class Methods
+    public class Methods
     {
-        public static void FirstNameInput()
+        public static string FirstNameInput(string Fname)
         {
             UserInput user = new UserInput();
             Pattern patterns = new Pattern();
-            bool status = false;
-            while (status != true)
-            {
-                Console.WriteLine("Please enter your first name :");
-                user.fName = Console.ReadLine();
+            user.fName = Fname;
                 bool Status = patterns.validateName(user.fName);
                 if (Status == true)
                 {
-                    Console.WriteLine("Accepted");
-                    status = true;
-
+                return "Happy";
                 }
                 else
                 {
-                    Console.WriteLine("Please enter valid input");
+                return "Sad";
                 }
-            }
+            
         }
-        public static void LastNameInput()
-        {
-            UserInput user = new UserInput();
-            Pattern patterns = new Pattern();
-            bool status = false;
-            while (status != true)
-            {
-                Console.WriteLine("Please enter your last name :");
-                user.lName = Console.ReadLine();
-                bool Status = patterns.validateName(user.lName);
-                if (Status == true)
-                {
-                    Console.WriteLine("Accepted");
-                    status = true;
-
-                }
-                else
-                {
-                    Console.WriteLine("Please enter valid input");
-                }
-            }
-        }
-        public static void EmailInput()
+       
+        public static string EmailInput(string email)
         {
             UserInput user = new UserInput();
             Pattern pattern = new Pattern();
-            bool status = false;
-            while (status != true)
-            {
-                Console.WriteLine("Please enter Gmail :");
-                user.email = Console.ReadLine();
+            user.email = email;
                 bool Status = pattern.validateEmail(user.email);
                 if (Status == true)
                 {
-                    Console.WriteLine("Accepted");
-                    status = true;
+                return "Happy";  
                 }
                 else
                 {
-                    Console.WriteLine("Please enter valid input");
+                return "Sad";
                 }
-            }
+            
         }
-        public static void MobileNumInput()
+        public static string MobileNumInput(string mobno)
         {
             UserInput user = new UserInput();
             Pattern pattern = new Pattern();
-            bool status = false;
-            while (status != true)
-            {
-                Console.WriteLine("Enter your mobile number");
-                user.mobileNum = Console.ReadLine();
+            user.mobileNum = mobno;
                 bool Status = pattern.validateMobileNum(user.mobileNum);
                 if (Status == true)
                 {
-                    Console.WriteLine("Accepted");
-                    status = true;
+                return "Happy";
                 }
                 else
                 {
-                    Console.WriteLine("Please enter valid input");
+                return "Sad";
                 }
-            }
+            
         }
-        public static void PasswordInput()
+        public static string PasswordInput(string Password)
         {
             Pattern pattern = new Pattern();
             UserInput user = new UserInput();
-            bool status = false;
-            while (status != true)
-            {
-                Console.WriteLine("Please enter password");
-                user.password = Console.ReadLine();
+            user.password = Password;
                 bool Status = pattern.validatePassword(user.password);
                 if (Status == true)
                 {
-
-                    Console.WriteLine("Accepted");
-                    status = true;
+                return "Happy";   
                 }
                 else
                 {
-                    Console.WriteLine("Rejected");
+                return "Sad";
                 }
 
-            }
+            
         }
     }
 }
